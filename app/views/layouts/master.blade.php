@@ -16,7 +16,7 @@
           
             <!-- sidebar -->
             <div class="column col-sm-3" id="sidebar">
-                <a class="logo" href="/hp/#about">CK</a>
+                <a class="logo" href="{{{ action('HomeController@showHome') }}}">CK</a>
                 <ul class="nav" id="links">
                     <li class="active"><a href="/hp/#resume">Resume</a>
                     </li>
@@ -32,7 +32,9 @@
                     <div class="full col-sm-9">
                       
                         <!-- content -->
+
 					@yield('content')
+					
                         <!-- content -->
 
           </div><!-- /col-9 -->

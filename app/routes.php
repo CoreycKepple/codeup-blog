@@ -13,13 +13,10 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
+Route::get('/ck','HomeController@showHome');
 
-Route::get('/hp','HomeController@showHome');
-
-Route::get('/newtodo', function()
-{
-    return View::make('newtodo');
-});
-
+Route::resource('posts', 'PostsController');
 
 Route::get('/rolldice/{num?}', 'HomeController@rollDice');
+
+Route::get('/newtodo', 'HomeController@showTodo');
