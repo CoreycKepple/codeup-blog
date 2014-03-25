@@ -16,14 +16,15 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/sayhello', function()
+
+Route::get('/hp', function()
 {
-    return "Hello, Codeup!";
+    return View::make('resume');
 });
 
-Route::get('/resume', function()
+Route::get('/newtodo', function()
 {
-    return "This is my Resume.";
+    return View::make('newtodo');
 });
 
 Route::get('/portfolio', function()
@@ -31,14 +32,32 @@ Route::get('/portfolio', function()
     return "This is my Portfolio.";
 });
 
-Route::get('/sayhello/{name}', function($name)
+Route::get('/sayhello/{name?}', function($name = 'corey')
 {
-    if ($name == "corey")
-    {
-        return Redirect::to('/');
-    }
-    else
-    {
-        return "Hello, $name!";
-    }
+	$data = array(
+		'name' => $name
+	);
+  return View::make('my-first-view')->with($data);
+});
+
+Route::get('/rolldice/{num?}', function($num = 1)
+{
+	$rand = rand(1,6);
+
+	if ($rand == $num) {
+		$message = 'Good Guess!';
+	}else {
+		$message = 'Wrong!';
+	}
+
+
+	$data = array(
+		'rand' => $rand,
+		'num' => $num,
+		'guess' => $message
+	);
+
+	
+	return View::make('dice-view')->with($data);
+
 });
