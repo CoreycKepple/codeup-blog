@@ -34,10 +34,10 @@
                         <!-- content -->
 
 					@yield('content')
-					
+
                         <!-- content -->
 
-          </div><!-- /col-9 -->
+          			</div><!-- /col-9 -->
                 </div><!-- /padding -->
             </div>
             <!-- /main -->

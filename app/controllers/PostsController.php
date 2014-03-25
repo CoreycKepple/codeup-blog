@@ -19,7 +19,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return 'This page is for createing a new post';
+		return View::make('posts.create');
 	}
 
 	/**
@@ -29,7 +29,9 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return 'This page is for storing a new post';
+		Log::info(Input::all());
+
+		return Redirect::back()->withInput();
 	}
 
 	/**
