@@ -1,6 +1,42 @@
 @extends('layouts.master')
 
+@section('topscript')
+<link href='/css/modal.css' rel='stylesheet'>
+@stop
+
 @section('content')
+ <!--Connect-->                  
+    <div class="col-sm-12">
+      <div class="page-header text-muted divider">
+        Connect with Me
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-default" title="View my GitHub profile"> <a href="https://github.com/CoreycKepple" target="_blank"><img src='/img/gh4.png' alt='GitHub'></a></button> <small class="text-muted">|</small> <button class="btn btn-default" data-toggle="modal" data-target="#myModal1" title="View my LinkedIn profile"> <a href="http://www.linkedin.com/in/cckepple" target="_blank"><img src='/img/link.png' alt='LinkedIn'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="E-mail Me"> <a href="mailto:CoreycKepple@gmail.com" target="_blank"><img src='/img/mail.png' alt='E-mail'></a></button> </small>
+      </div>
+    </div>
+   <!-- Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" id="myModalLabel1">Corey Kepple <small>Web Application Developer</small></h4>
+          </div>
+          <div class="modal-body">
+            <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+            <script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/cckepple"
+            data-format="inline"></script>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- #/myModal -->
+
 	<!--About Me-->
     <div class="col-sm-12" id="about">   
         <div class="page-header text-muted">
@@ -90,8 +126,8 @@
                       
     <div class="row">    
       <div class="col-sm-4 text-center">
-        <h4>Address Book</h4>
-        <a href="#"><img src="/img/codeup-ribbon.png" class="thumbnail center-block" alt='Project 1'></a>
+        <h4>Blog</h4>
+        <a href="{{{ action('PostsController@index') }}}"><img src="/img/codeup-ribbon.png" class="thumbnail center-block" alt='Project 1'></a>
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
       </div>
       <div class="col-sm-4 text-center">
@@ -100,22 +136,27 @@
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
       </div>
       <div class="col-sm-4 text-center">
-        <h4>PhP BlackJack</h4>
-        <a href="#"><img src="/img/codeup-ribbon.png" class="thumbnail center-block" alt='Project 3'></a>
+        <h4>Whack-A-Yankee</h4>
+        <a href="{{{ action('HomeController@showWhack')}}}"><img src="/img/blogo.png" class="thumbnail center-block" alt='Project 3'></a>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
+      </div>
+    </div>
+    <div class="row">    
+      <div class="col-sm-4 text-center">
+        <h4>Blog</h4>
+        <a href="{{{ action('PostsController@index') }}}"><img src="/img/codeup-ribbon.png" class="thumbnail center-block" alt='Project 1'></a>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h4>Todo list</h4>
+        <a href="{{{ action('HomeController@showTodo') }}}"><img src="/img/todo.png" class="thumbnail center-block" alt='Project 2'></a>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h4>Whack-A-Yankee</h4>
+        <a href="{{{ action('HomeController@showWhack')}}}"><img src="/img/blogo.png" class="thumbnail center-block" alt='Project 3'></a>
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
       </div>
     </div>
                       
-    <!--Connect-->                  
-    <div class="col-sm-12">
-      <div class="page-header text-muted divider">
-        Connect with Me
-      </div>
-    </div>
-  
-    <div class="row">
-      <div class="col-sm-6">
-        <a href="https://github.com/CoreycKepple" target="_blank">GitHub</a> <small class="text-muted">|</small> <a href="http://www.linkedin.com/in/cckepple" target="_blank">LinkedIn</a> <small class="text-muted">|</small>  <a href="mailto:CoreycKepple@gmail.com" target="_blank">E-mail</a><small class="text-muted"> </small>
-      </div>
-    </div>
 @stop

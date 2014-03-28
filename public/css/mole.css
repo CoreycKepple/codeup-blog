@@ -1,0 +1,102 @@
+#gamebox {
+height: 500px;
+width: 500px;
+
+}
+
+#gameover {
+	position:relative;
+	width:350px;
+	height:200px;
+	border: 2px solid red;
+}
+
+#bonustext{
+	color: #041b42;
+	font-family: 'Oldenburg', cursive;
+	font-weight: 900;
+	font-size: 2em;
+	padding: 2px;
+	margin-left: 15px;
+	display:none;
+}
+
+
+.scorebox {
+
+	height: 50px;
+	width: 150px;
+	border: 3px solid #FFF;
+	background-color: #9c030b;
+	margin-bottom: 5px;
+}
+
+.bonusbox {
+	height: 50px;
+	width: 300px;
+	border: 3px solid #FFF;
+	background-color: #9c030b;
+	margin-bottom: 5px;
+}
+
+#startbutton {
+	color: #041b42;
+	font-family: 'Oldenburg', cursive;
+	font-weight: 900;
+	font-size: 2em;
+	height: 50px;
+	width: 150px;
+	border: 3px solid #FFF;
+	background-color: #9c030b;
+	margin-top: 25px;
+}
+
+#startbutton:hover {
+	box-shadow: 0px 0px 15px #fff;
+
+}
+
+#b {
+	
+	height: 350px;
+	width: 205px;
+	margin-right: 60px;
+	margin-top: 20px;
+
+}
+
+#scoretext {
+	margin-top: 5px;
+	color: #041b42;
+	font-family: 'Oldenburg', cursive;
+	font-weight: 900;
+	font-size: 1em;
+	padding: 2px;
+}
+
+#hightext {
+	margin-top: 5px;
+	color: #041b42;
+	font-family: 'Oldenburg', cursive;
+	font-weight: 900;
+	font-size: 1em;
+	padding: 1px;
+}
+
+#main {
+	background-color: #041b42;
+	cursor:url('/img/whack/final.png') 25 25, auto;
+}
+
+.boxes {
+	height: 33.333%;
+	width: 33.334%;
+	border: 1px solid #FFF;
+	float:left;
+}
+
+.boxes > img {
+	padding-top: 10px;
+	padding-left: 10px;
+	display:none;
+}

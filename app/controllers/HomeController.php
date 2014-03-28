@@ -52,4 +52,9 @@ class HomeController extends BaseController {
 	    return View::make('newtodo');
 	}
 
+	public function showWhack()
+	{
+		return View::make('game');
+	}
+
 }

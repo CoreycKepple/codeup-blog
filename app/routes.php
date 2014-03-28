@@ -20,3 +20,6 @@ Route::resource('posts', 'PostsController');
 Route::get('/rolldice/{num?}', 'HomeController@rollDice');
 
 Route::get('/newtodo', 'HomeController@showTodo');
+
+Route::get('/game', 'HomeController@showWhack');
+
