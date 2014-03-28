@@ -1,0 +1,13 @@
+/*
+Custom modal, you can remove all of these for default behavior
+*/
+
+.modal-content{
+  background-color:#222;
+  color:#ddd;
+}
+
+.modal-dialog {
+  width: 425px;
+  background-color:#333;
+}
