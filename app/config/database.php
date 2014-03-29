@@ -54,6 +54,7 @@ return array(
 
 		'mysql' => array(
 		    'driver'    => 'mysql',
+		    'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
 		    'host'      => isset($_SERVER['DB1_HOST']) ? $_SERVER['DB1_HOST'] : '127.0.0.1',
 		    'database'  => isset($_SERVER['DB1_NAME']) ? $_SERVER['DB1_NAME'] : 'blog_db',
 		    'username'  => isset($_SERVER['DB1_USER']) ? $_SERVER['DB1_USER'] : 'corey',
