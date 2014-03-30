@@ -1,6 +1,10 @@
 #gamebox {
 height: 500px;
 width: 500px;
+background-color: #9c030b;
+padding: 0px;
+border: 2px solid #FFF;
+margin-top: 5px;
 
 }
 
@@ -9,6 +13,7 @@ width: 500px;
 	width:350px;
 	height:200px;
 	border: 2px solid red;
+	margin-left: 35px;
 }
 
 #bonustext{
@@ -17,7 +22,7 @@ width: 500px;
 	font-weight: 900;
 	font-size: 2em;
 	padding: 2px;
-	margin-left: 15px;
+	margin-left: 25px;
 	display:none;
 }
 
@@ -36,6 +41,14 @@ width: 500px;
 	width: 300px;
 	border: 3px solid #FFF;
 	background-color: #9c030b;
+	margin-bottom: 5px;
+}
+
+.bonusbg {
+	height: 50px;
+	width: 300px;
+	border: 3px solid #FFF;
+	background-color: #FFF;
 	margin-bottom: 5px;
 }
 
@@ -62,6 +75,7 @@ width: 500px;
 	width: 205px;
 	margin-right: 60px;
 	margin-top: 20px;
+	margin-right: 75px;
 
 }
 
@@ -90,8 +104,8 @@ width: 500px;
 
 .boxes {
 	height: 33.333%;
-	width: 33.334%;
-	border: 1px solid #FFF;
+	width: 33.333%;
+	border: 3px solid #FFF;
 	float:left;
 }
 

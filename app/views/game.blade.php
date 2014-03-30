@@ -67,6 +67,9 @@
        	hit.setAttribute('src', '/sounds/hit.mp3');
        	var cartman = document.createElement('audio');
        	cartman.setAttribute('src', 'sounds/cartman.mp3')
+       	var i = 5;
+       	var t = 8000;
+       	
 
        	
 
@@ -77,43 +80,59 @@
 		}
 
 		function endGame(){
+			t = 8000;
 			clearInterval(game);
-			$('#bonustext').html('<p>Game Over</p>');
+			clearInterval(bpoints);
+			$('#bonustext').show();
+			$('#bonustext').html('<p> Game Over</p>').css('margin-left','45px');
 			$('.pic').hide("explode");
 			score = 0;
 			$('#scoretext').children().html(score);
 			$('#startbutton').removeAttr('style');
-			audioElement.stop();
+			audioElement.pause();
 
 		}
+
 		function bonus(){
-       		if (score >=5) {
+       		if (score >= i) {
        			score = score+2;
-
-       			$('#scoretext').children().html(score);
-       			$('#bonustext').fadeIn(500);
        			cartman.play();
+       			$('#scoretext').children().html(score);
+       			if (score > highscore) {
+					highscore = score;
+				};
+				$('#hightext').children().html(highscore);
+       			$('#bonustext').fadeIn(500);
+       			$('#bonustext').fadeOut(500);
+       			$('#bonustext').fadeIn(500);
        			$('#bonustext').fadeOut(500);
        			$('#bonustext').fadeIn(500);
        			$('#bonustext').fadeOut(500);
        			$('#bonustext').fadeIn(500);
-       			clearInterval(bonus);
+       			$('#bonustext').fadeOut(500);
+       			$('#bonustext').fadeIn(500);
+       			$('#bonustext').fadeOut(500);
+       			
        		};
+       		clearInterval(bpoints);
+       		i = i+5;
+       		t= t-1000;
+       		console.log(t);
+       		bpoints = window.setInterval(bonus, t);
        	}
 
-       	function clearBonus(){
-
-       	}
+ 
 
 		
 		
 		$('#startbutton').click(function(){
 			$('#bonustext').hide();
 			$('#startbutton').css('box-shadow','0px 0px 15px #F00');
-			game = window.setInterval(boxchange, 1000);
-			bonus = window.setInterval(bonus, 5000);
+			game = window.setInterval(boxchange, 800);
+			bpoints = window.setInterval(bonus, t);
 			window.setInterval(endGame, 30000);
        		audioElement.play();
+       		console.log(t);
 		});
 
 		$('.boxes').children().click(function() {
