@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('your-machine-name'),
+	'local' => array('corey kepple’s MacBook'),
 	'production' => array('tunnel.pagodabox.com')
 
 ));
