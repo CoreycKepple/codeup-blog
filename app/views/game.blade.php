@@ -112,6 +112,7 @@
        			$('#bonustext').fadeOut(500);
        			$('#bonustext').fadeIn(500);
        			$('#bonustext').fadeOut(500);
+       			console.log(t+'*');
        			
        		};
        		clearInterval(bpoints);
