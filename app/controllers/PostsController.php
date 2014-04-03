@@ -9,6 +9,8 @@ class PostsController extends BaseController {
 
 		// run auth filter before all methods on this controller except index and show
 		$this->beforeFilter('auth', ['except' => ['index', 'show']]);
+
+		$this->beforeFilter('post.protect', array('only' => array('edit', 'update', 'destroy')));
 	}
 
 	
@@ -27,14 +29,12 @@ class PostsController extends BaseController {
 			$data = array('posts' => Post::with('user')
 											->orderBy('created_at', 'desc')
 											->paginate(4));
-		
 		}else{
 		
 			$data = array('posts' => Post::with('user')
 											->where('title', 'LIKE', "%{$search}%")
 											->orWhere('body', 'LIKE', "%{$search}%")
 											->paginate(4));
-		
 		}
 		return View::make('posts.index')->with($data);
 	}
@@ -72,26 +72,17 @@ class PostsController extends BaseController {
 		    $post = new Post();
 		    $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
-			$post->body = Input::get('body');
+			$parsedown = new Parsedown();
+			$usrinput = $parsedown->parse(Input::get('body'));
+			$post->body = $usrinput;
 	    	if(Input::hasFile('file')){
-
-				$file = Input::file('file');
-				$randompath = str_random(8);
-				$destinationPath = public_path().'/upload/'.$randompath;
-				$filename = $file->getClientOriginalName();
-				Input::file('file')->move($destinationPath, $filename);
-				$post->image_path = "/upload/".$randompath.'/'.$filename;	
-				
+				$post->assignImage(Input::file('file'));
 		    }
 		    // validation succeeded, create and save the post
-		    
 			$post->save();
 			Session::flash('successMessage', 'Post created successfully.');
-			return Redirect::action('PostsController@index');
-			
+			return Redirect::action('PostsController@index');	
 	    }
-
-		
 	}
 
 	/**
@@ -144,14 +135,11 @@ class PostsController extends BaseController {
 	        $post = Post::findorFail($id);
 	        $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
-			$post->body = Input::get('body');
+			$parsedown = new Parsedown();
+			$usrinput = $parsedown->parse(Input::get('body'));
+			$post->body = $usrinput;
 			if (Input::hasFile('file')) {
-				$file = Input::file('file');
-				$randompath = str_random(8);
-				$destinationPath = public_path().'/upload/'.$randompath;
-				$filename = $file->getClientOriginalName();
-				Input::file('file')->move($destinationPath, $filename);
-				$post->image_path = "/upload/".$randompath.'/'.$filename;	
+				$post->assignImage(Input::file('file'));
 			}else {
 				$post->image_path = null;
 			}
