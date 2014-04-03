@@ -5,6 +5,23 @@
 @stop
 
 @section('content')
+  <!--About Me-->
+    <div class="col-sm-12" id="about">   
+        <div class="page-header text-muted">
+            About Me<a href='#top'><span class="badge glyphicon glyphicon-arrow-up visible-xs"> </span></a>
+        </div> 
+    </div>
+                        
+    <div class="row">    
+      <div class="col-sm-10">
+            <h4>My name is Corey Kepple and I want to be your web developer.</h4>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, laudantium, illo natus vel nihil et sapiente sequi eum harum tempore odio doloremque quisquam nostrum asperiores quasi voluptates inventore unde enim.</p>
+        </div>
+        <div class="col-sm-2">
+            <a href="#" class="pull-right"><img src="/img/corey.jpg" class="img-circle" alt='Pic of me'></a>
+        </div> 
+    </div>
+
  <!--Connect-->                  
     <div class="col-sm-12">
       <div class="page-header text-muted divider">
@@ -13,10 +30,11 @@
     </div>
   
     <div class="row">
-      <div class="col-sm-12">
-        <button class="btn btn-default" title="View my GitHub profile"> <a href="https://github.com/CoreycKepple" target="_blank"><img src='/img/gh4.png' alt='GitHub'></a></button> <small class="text-muted">|</small> <button class="btn btn-default" data-toggle="modal" data-target="#myModal1" title="View my LinkedIn profile"> <a href="http://www.linkedin.com/in/cckepple" target="_blank"><img src='/img/link.png' alt='LinkedIn'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="E-mail Me"> <a href="mailto:CoreycKepple@gmail.com" target="_blank"><img src='/img/mail.png' alt='E-mail'></a></button> </small>
+      <div class='col-sm-10 col-sm-offset-1'>
+        <button class="btn btn-default" title="GitHub"> <a href="https://github.com/CoreycKepple" target="_blank"><img src='/img/gh4.png' alt='GitHub'></a></button> <small class="text-muted">|</small> <button class="btn btn-default" data-toggle="modal" data-target="#myModal1" title="LinkedIn"> <a href="http://www.linkedin.com/in/cckepple" target="_blank"><img src='/img/link.png' alt='LinkedIn'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="Facebook"> <a href="http://www.facebook.com/corey.kepple" target="_blank"><img src='/img/fb2.png' alt='Facebook'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="E-mail Me"> <a href="mailto:CoreycKepple@gmail.com" target="_blank"><img src='/img/mail.png' alt='E-mail'></a></button> 
       </div>
     </div>
+
    <!-- Modal -->
     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -36,24 +54,9 @@
         </div>
       </div>
     </div> <!-- #/myModal -->
+<!--Connect-->  
 
-	<!--About Me-->
-    <div class="col-sm-12" id="about">   
-        <div class="page-header text-muted">
-            About Me<a href='#top'><span class="badge glyphicon glyphicon-arrow-up visible-xs"> </span></a>
-        </div> 
-    </div>
-                        
-    <div class="row">    
-    	<div class="col-sm-10">
-            <h4>My name is Corey Kepple and I want to be your web developer.</h4>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, laudantium, illo natus vel nihil et sapiente sequi eum harum tempore odio doloremque quisquam nostrum asperiores quasi voluptates inventore unde enim.</p>
-        </div>
-        <div class="col-sm-2">
-            <a href="#" class="pull-right"><img src="/img/corey.jpg" class="img-circle" alt='Pic of me'></a>
-        </div> 
-    </div>
-                        
+<!--Resume-->                    
     <div class="col-sm-12" id="stories">  
         <div class="page-header text-muted divider" id='resume'>
             Resume
@@ -61,8 +64,6 @@
         </div>
     </div>
                         
-                        
-    <!--Resume-->
     <div class="row">    
         <div class="col-sm-10">
             <h2>Education</h2>
@@ -116,7 +117,7 @@
        <div class="col-sm-12"><hr></div>
     </div> 
     -->
-    <!--Portfolio-->
+<!--Portfolio-->
     <div class="col-sm-12">
       <div class="page-header text-muted divider move" id="portfolio">
         Portfolio
@@ -126,8 +127,8 @@
                       
     <div class="row">    
       <div class="col-sm-4 text-center">
-        <h4>Blog</h4>
-        <a href="{{{ action('PostsController@index') }}}"><img src="/img/codeup-ribbon.png" class="thumbnail center-block" alt='Project 1'></a>
+        <h4>Blog Project</h4>
+        <a href="{{{ action('PostsController@index') }}}"><img src="/img/crud.png" class="thumbnail center-block" alt='Project 1'></a>
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde, incidunt, numquam fuga hic quaerat veritatis ad iste perspiciatis eaque quod consequatur cupiditate aliquam dolorem quasi reiciendis porro officia quia.</p>
       </div>
       <div class="col-sm-4 text-center">

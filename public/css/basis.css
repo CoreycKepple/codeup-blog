@@ -9,6 +9,30 @@ a {
   color:#222222;
 }
 
+.fntsize{
+  font-size: 12px;
+}
+
+#style{
+  margin-left: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#send {
+  margin-bottom: 5px;
+}
+
+.margtop {
+  margin-top: 10px
+} 
+
+
+.btnsize {
+  font-size: -2em;
+  width:50px;
+}
+
 
 .mid{
   padding-left: 190px;
@@ -21,6 +45,12 @@ a {
 
 .margleft{
   margin-left: 25px;
+}
+
+.content{
+  color:#000;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 #upload{
@@ -163,6 +193,9 @@ a {
 h1,h2,h3 {
    font-weight:800;
    font-family:'Open Sans',arial,sans-serif;
+}
+h3 .small {
+font-size: 40%;
 }
 
 .jumbotron {

@@ -1,50 +1,44 @@
 @extends('layouts.master')
 
 @section('content')
-<style type="text/css">
-	
-#style{
-	margin-left: 250px;
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
-
-#send {
-	margin-bottom: 5px;
-}
-
-.margtop {
-	margin-top: 10px
-}	
-
-</style>
+<div class='row'>
+        <div class='col-sm-1'>
+               <a href="{{{ action('PostsController@index') }}}" style='color:#FFF;'><button type='button' class='btn btn-primary' title='View List of All Posts'><span class='glyphicon glyphicon-list-alt'></span></button></a>
+        </div>
+</div>
 <div class='row'>
 	<div class="col-sm-12" id="about">   
         <div class="page-header text-muted">
-            Create a Post
+            Edit this Post
         </div> 
     </div>
 </div>
 <div class='row'>
 	<div class='col-sm-8' id='style'>
-		<h1>Blog Post</h1>
-		{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT'), array('class' => "btn btn-default")) }}
-		{{ Form::label('title', 'Title', array('style' => 'display:block')) }}
-		{{ $errors->first('title', '<span class="help-block" style="color:red;">:message</span>') }}
-		{{ Form::text('title') }}
-		{{ Form::label('body', 'Body', array('style' => 'display:block')) }}
-		{{ Form::textarea('body') }}
-		{{ $errors->first('body', '<span class="help-block" style="color:red;">:message</span>') }}
-		{{ Form::submit('Edit Post', array('style' => 'display:block', 'class' => "btn btn-warning")) }}
+		{{ Form::model($post, array('action' => array('PostsController@update', $post->id),'files' => true, 'method' => 'PUT'), array('class' => "form-control")) }}
+		<div class='form-group'>
+			{{ Form::label('title', 'Title', array('style' => 'display:block')) }}
+			{{ Form::text('title', null, array('class' => 'form-control')) }}
+			{{ $errors->first('title', '<span class="help-block danger" style="color:red;">:message</span>') }}
+		</div>
+		<div class='form-group'>
+			{{ Form::label('body', 'Body', array('style' => 'display:block')) }}
+			{{ Form::textarea('body', null, array('class' => 'form-control'))}}
+			{{ $errors->first('body', '<span class="help-block" style="color:red;">:message</span>') }}
+		</div>
+		<div class='form-group'>
+			{{ Form::file('file') }}
+			@if (!is_null($post->image_path))
+			<p> If no image is specified here -- current image will be removed</p>
+			@endif
+		</div>
+		<button style="display:block" class="btn btn-warning" type="submit" value="submit" title='Submit Post'><span class='glyphicon glyphicon-edit'></span>
 		{{ Form::close() }}
 	</div>
+	@if (!is_null($post->image_path))
+	<div class='col-sm-3'>
+		<img src='{{{ $post->image_path }}}' class='img-responsive' style='margin-top:75px;'>
+	</div>
+	@endif
 </div>
-<div class='row'>
-	 <div class="col-sm-12" id="about">   
-        <div class="page-header">
-            <button type='button' class='btn btn-primary'><a href="{{{ action('PostsController@index') }}}" style='color:#FFF;'>View all Posts!</a></button>
-        </div> 
-    </div>
-</div>
-
 @stop

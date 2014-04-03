@@ -11,15 +11,29 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'HomeController@showHome');
 
 Route::get('/ck','HomeController@showHome');
 
 Route::resource('posts', 'PostsController');
 
-Route::get('/rolldice/{num?}', 'HomeController@rollDice');
+Route::post('/posts/create', 'BaseController@uploadedImage');
 
 Route::get('/newtodo', 'HomeController@showTodo');
 
 Route::get('/game', 'HomeController@showWhack');
+
+Route::get('/login', 'HomeController@showLogin');
+
+Route::post('/login', 'HomeController@doLogin');
+
+Route::get('/logout', 'HomeController@logout');
+
+Route::get('/new', function()
+{
+	$user = new User();
+	$user->email = 'corey';
+	$user->password = 'password';
+	$user->save();
+});
 

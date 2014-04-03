@@ -28,6 +28,11 @@
                     </li>
                     <li><a href="/ck/#portfolio">Portfolio</a>
                     </li>
+                    @if(Auth::check())
+                    <li><a href='{{{ action("HomeController@logout") }}}'>Logout <span class='small text-muted'>({{{ Auth::user()->email }}})</span></a></li>
+                    @else
+                    <li><a href='{{{ action("HomeController@showLogin") }}}'>Login</a></li>
+                    @endif
                 </ul>
             </div>
             <!-- /sidebar -->

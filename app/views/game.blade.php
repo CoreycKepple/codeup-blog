@@ -10,7 +10,7 @@
 		<div class='scorebox col-sm-4'>
 			<p id='scoretext'>Score: <span> </span></p>
 		</div>
-		<div class='bonusbox col-sm-4 col-sm-offset-2'>
+		<div class='bonusbox bonusboxwhite col-sm-4 col-sm-offset-2'>
 			<p id='bonustext'>Bonus Points!</p>
 		</div>
 		<div class='scorebox col-sm-4 col-sm-offset-1'>
@@ -68,7 +68,7 @@
        	var cartman = document.createElement('audio');
        	cartman.setAttribute('src', 'sounds/cartman.mp3')
        	var i = 5;
-       	var t = 8000;
+       	var t = 7000;
        	
 
        	
@@ -80,7 +80,7 @@
 		}
 
 		function endGame(){
-			t = 8000;
+			t = 7000;
 			clearInterval(game);
 			clearInterval(bpoints);
 			$('#bonustext').show();
@@ -103,7 +103,7 @@
 				};
 				$('#hightext').children().html(highscore);
        			$('#bonustext').fadeIn(500);
-       			$('#bonustext').fadeOut(500);
+       			$('bonustext').fadeOut(500);
        			$('#bonustext').fadeIn(500);
        			$('#bonustext').fadeOut(500);
        			$('#bonustext').fadeIn(500);
@@ -117,7 +117,7 @@
        		};
        		clearInterval(bpoints);
        		i = i+5;
-       		t= t-1000;
+       		t= t-750;
        		console.log(t);
        		bpoints = window.setInterval(bonus, t);
        	}
