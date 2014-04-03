@@ -57,4 +57,9 @@ class User extends Base implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	public function canManagePost($post)
+	{
+		$this->id == $post->user_id;
+	}
+
 }

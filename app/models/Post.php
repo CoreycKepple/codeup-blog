@@ -20,4 +20,14 @@ class Post extends Base {
 		return $this->belongsTo('User');
 	}
 
+  public function assignImage($inputFile)
+  {
+        $file = $inputFile;
+        $randompath = str_random(8);
+        $destinationPath = public_path().'/upload/'.$randompath;
+        $filename = $file->getClientOriginalName();
+        $inputFile->move($destinationPath, $filename);
+        $this->attributes['image_path'] = "/upload/".$randompath.'/'.$filename;
+  }
+
 }

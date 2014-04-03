@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
+@section('topscript')
+ 	<script src="/ckeditor/ckeditor.js"></script>
+
+@stop
+
 @section('content')
 <div class='row'>
         <div class='col-sm-1'>
@@ -41,4 +46,9 @@
 	</div>
 	@endif
 </div>
+<script>
+ 	// Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'body' );
+</script>
 @stop

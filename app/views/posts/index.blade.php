@@ -27,9 +27,9 @@
         @foreach ($posts as $post)
             <div class="row">    
                 <div class="col-sm-6">
-                    <h3><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a><span class='small fntsize'>&nbsp;&mdash; Created on: {{{ $post->created_at->format('l, F jS Y') }}}</span></h3>
-                    <p class='small'>Written by: {{{ $post->user->email}}}</p>
-                    <p class='content'> {{{ Str::words($post->body, 4) }}} </p>
+                    <h2><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a><span class='small fntsize'>&nbsp;&mdash; Created on: {{{ $post->created_at->format('l, F jS Y') }}}</span></h2>
+                    <p class='small' style='text-decoration:underline;'>Written by: {{{ $post->user->fname}}} {{{ $post->user->lname }}}</p>
+                    <p> {{ Str::words($post->body, 4) }} </p>
                 </div>
                 @if (!is_null($post->image_path))
                 <div class="col-sm-2">
@@ -38,7 +38,7 @@
                 @endif 
             </div>
         @endforeach
-        <div>
+        <div style='margin-left:20px;'>
             {{ $posts->appends(array('search' => Input::get('search')))->links() }}
         </div>
     @else

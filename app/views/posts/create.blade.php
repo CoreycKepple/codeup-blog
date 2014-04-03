@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('topscript')
+ 	<script src="/ckeditor/ckeditor.js"></script>
+@stop
+
 @section('content')
 <div class='row'>
         <div class='col-sm-1'>
@@ -27,6 +31,7 @@
 			{{ $errors->first('body', '<span class="help-block" style="color:red;">:message</span>') }}
 		</div>
 		<div class='form-group'>
+			{{Form::label('file','Upload Image')}}
 			{{ Form::file('file') }}
 		</div>
 		<button style="display:block" class="btn btn-success" type="submit" value="submit" title='Submit Post'><span class='glyphicon glyphicon-pencil'></span>
@@ -34,5 +39,11 @@
 	</div>
 
 </div>
+
+<script>
+ 	// Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'body' );
+</script>
 
 @stop

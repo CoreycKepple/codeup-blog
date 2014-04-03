@@ -78,3 +78,15 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+Route::filter('post.protect', function($route){
+	$id = $route->getParameter('posts');
+
+	$post = Post::find($id);
+
+	if (!Auth::user()->canManagePost($post)) {
+		Session::flash('errorMessage', 'You can only update / delete your posts.');
+		return Redirect::action('PostsController@show', $id);
+	}
+});

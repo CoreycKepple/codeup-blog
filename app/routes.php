@@ -31,9 +31,11 @@ Route::get('/logout', 'HomeController@logout');
 
 Route::get('/new', function()
 {
-	$user = new User();
-	$user->email = 'corey';
-	$user->password = 'password';
-	$user->save();
+		$user = new User();
+		$user->fname = 'Courtney';
+		$user->lname = 'Jefferson';
+		$user->email = 'courtneypjefferson@gmail.com';
+		$user->password = 'pass';
+		$user->save();
 });
 
