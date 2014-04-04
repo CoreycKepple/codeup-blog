@@ -12,7 +12,7 @@
                 <h3>{{{ $post->title }}}</h3>
                 <p class='text-muted'>Posted on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y') }}} </p>
             </div>    
-            <p class='small text-muted'>Written By: {{{$post->user->email}}} </p>    
+            <p class='small text-muted'>Written by: {{{ $post->user->fname}}} {{{ $post->user->lname }}}</p>    
             <p> {{ $post->body }} </p>
         </div>
         @if (!is_null($post->image_path))  

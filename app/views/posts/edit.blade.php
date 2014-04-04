@@ -32,6 +32,7 @@
 			{{ $errors->first('body', '<span class="help-block" style="color:red;">:message</span>') }}
 		</div>
 		<div class='form-group'>
+			{{Form::label('file','Upload Image')}}
 			{{ Form::file('file') }}
 			@if (!is_null($post->image_path))
 			<p> If no image is specified here -- current image will be removed</p>

@@ -1,8 +1,5 @@
 @extends('layouts.master')
 
-
-
-
 @section('content')
 
 <div class='container'>
@@ -27,7 +24,7 @@
         @foreach ($posts as $post)
             <div class="row">    
                 <div class="col-sm-6">
-                    <h2><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a><span class='small fntsize'>&nbsp;&mdash; Created on: {{{ $post->created_at->format('l, F jS Y') }}}</span></h2>
+                    <h2><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a><small><span class='fntsize' style='display:block;'>Created on: {{{ $post->created_at->format('l, F jS Y') }}}</span></small></h2>
                     <p class='small' style='text-decoration:underline;'>Written by: {{{ $post->user->fname}}} {{{ $post->user->lname }}}</p>
                     <p> {{ Str::words($post->body, 4) }} </p>
                 </div>
