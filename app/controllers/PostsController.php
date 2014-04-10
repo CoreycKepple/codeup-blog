@@ -2,14 +2,21 @@
 
 class PostsController extends BaseController {
 
+	/**
+	* functions which run before the site is displayed
+	* Include validation filters
+	*/
 	public function __construct()
 	{
 		 // call base controller constructor
 		parent::__construct();
 
-		// run auth filter before all methods on this controller except index and show
+		// run auth filter before all methods on this controller except index and show, 
+		// only logged in users can create, update, delete posts
 		$this->beforeFilter('auth', ['except' => ['index', 'show']]);
 
+		// run auth filter before all methods on this controller to protect posts, 
+		// only post author can alter post
 		$this->beforeFilter('post.protect', array('only' => array('edit', 'update', 'destroy')));
 	}
 
@@ -24,6 +31,7 @@ class PostsController extends BaseController {
 	{
 		$search = Input::get('search');
 		
+		// this allows the search functionality on the index page
 		if (is_null($search)) {
 			
 			$data = array('posts' => Post::with('user')
@@ -69,12 +77,15 @@ class PostsController extends BaseController {
 	    }
 	    else
 	    {
+	    	// take user input
 		    $post = new Post();
 		    $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
-			$parsedown = new Parsedown();
-			$usrinput = $parsedown->parse(Input::get('body'));
-			$post->body = $usrinput;
+			$purifier = new HTMLPurifier();
+    		$clean_html = $purifier->purify(Input::get('body'));
+			$post->body = $clean_html;
+	    	
+	    	// check for image upload, if present add image to post
 	    	if(Input::hasFile('file')){
 				$post->assignImage(Input::file('file'));
 		    }
@@ -135,9 +146,11 @@ class PostsController extends BaseController {
 	        $post = Post::findorFail($id);
 	        $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
-			$parsedown = new Parsedown();
-			$usrinput = $parsedown->parse(Input::get('body'));
-			$post->body = $usrinput;
+			$purifier = new HTMLPurifier();
+    		$clean_html = $purifier->purify(Input::get('body'));
+			$post->body = $clean_html;
+
+			// check for image upload, if present add image to post, if no image present clear image.
 			if (Input::hasFile('file')) {
 				$post->assignImage(Input::file('file'));
 			}else {

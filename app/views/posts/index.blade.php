@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-<div class='container'>
     <div class='row'>
         <div class='col-sm-1'>
                <a href="{{{ action('PostsController@create') }}}" style='color:#FFF;'><button type='button' class='btn btn-success' title='Create a New Post'><span class='glyphicon glyphicon-pencil'></span></button></a>
@@ -25,12 +23,12 @@
             <div class="row">    
                 <div class="col-sm-6">
                     <h2><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a><small><span class='fntsize' style='display:block;'>Created on: {{{ $post->created_at->format('l, F jS Y') }}}</span></small></h2>
-                    <p class='small' style='text-decoration:underline;'>Written by: {{{ $post->user->fname}}} {{{ $post->user->lname }}}</p>
-                    <p> {{ Str::words($post->body, 4) }} </p>
+                    <p class='small' style='text-decoration:underline;'>Posted by: {{{ $post->user->fname}}} {{{ $post->user->lname }}}</p>
+                    <p> {{ Str::words($post->body, 35) }} </p>
                 </div>
                 @if (!is_null($post->image_path))
                 <div class="col-sm-2">
-                    <a href="#" class="pull-right"><img src="{{{ $post->image_path }}}" class="img-circle" alt='Post Image'></a>
+                    <img src="{{{ $post->image_path }}}" class="img-circle pull-right" alt='Post Image'>
                 </div>
                 @endif 
             </div>

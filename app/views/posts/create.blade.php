@@ -27,7 +27,7 @@
 		</div>
 		<div class='form-group'>
 			{{ Form::label('body', 'Body', array('style' => 'display:block')) }}
-			<textarea class="form-control" id="body" name='body' placeholder="Content goes here..." rows='10'></textarea>
+			{{ Form::textarea('body', null, array('class' => 'form-control'))}}
 			{{ $errors->first('body', '<span class="help-block" style="color:red;">:message</span>') }}
 		</div>
 		<div class='form-group'>
