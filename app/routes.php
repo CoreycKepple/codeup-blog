@@ -29,6 +29,7 @@ Route::post('/login', 'HomeController@doLogin');
 
 Route::get('/logout', 'HomeController@logout');
 
+
 Route::get('/new', function()
 {
 		$user = new User();
