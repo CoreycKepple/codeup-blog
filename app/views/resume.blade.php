@@ -5,7 +5,8 @@
 @stop
 
 @section('content')
- <!--Connect-->                  
+ <!--Connect--> 
+  <small>                 
     <div class="col-sm-12">
       <div class="page-header text-muted divider">
         Connect with Me
@@ -70,7 +71,7 @@
             </ul>
             <a href="http://www.unf.edu/" target='_blank'  class="pull-right"><img src="/img/ulogo.jpg" class="img-circle" alt='UNF logo'></a>
             <h4>University of North Florida <small>| Jacksonville, Florda</small></h4>
-            <p> Graduated: April 2012 <small>&mdash;B.A. in Public Adminisration</p>
+            <p> Graduated: April 2012 <small>&mdash;B.A. in Public Adminisration</small></p>
             <ul>
               <li>Recipient of Deans List recognition 2009-2012</li>
               <li>Published Co-Author of Op-ed in Florida Times Union on conflict in Sudan</li>
@@ -124,5 +125,6 @@
         <p>I developed this game both as a way to learn Javascript and JQuery, but also to show my passion for Boston sports (and dislike of the Yankees).  The game was built entirely using HTML, CSS, Javascript, and JQuery.</p>
       </div>
     </div>
+    </small>
                       
 @stop
