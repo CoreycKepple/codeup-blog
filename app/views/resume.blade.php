@@ -51,11 +51,12 @@
         <div class="col-sm-10">
             <h2>Programming Knowledge</h2>
             <a href='#' target='_blank' class='pull-right'><img src="/img/lamp21.png" class='img-circle' alt='LAMP logo'></a>
-            <h4>Freelace Developer <small>| San Antonio, Texas</small></h4>
+            <h4>Freelace Developer <small>| San Antonio, Texas &mdash; Current</small></h4>
             <ul>
-                <li>Experience in UNIX / Linux, OS X operating environments</li>
+                <li>Experienced developer in UNIX / Linux, OS X operating environments</li>
                 <li>Object Oriented PHP Developer (PHP5)</li>
                 <li>MySQL, Laravel Framework, MVC, Git toolset</li>
+                <li>Javascript, Jquery, HTML5, CSS, Twitter Bootsrap library</li>
                 <li>Strong front end / back end developer with wide skill set</li>
             </ul>
             <h2>Education</h2>
@@ -63,13 +64,13 @@
             <h4>CodeUp <small>| San Antonio, Texas</small></h4>
             <p>Feb. 2014 - April 2014</p>
             <ul>
-              <li>Learned programming and web development with the LAMP stack: Linux/Apache/MySQL/PHP and client-side JavaScript using the Laravel framework and jQuery.</li>
+              <li>Became a capable web developer within the LAMP stack: Linux/Apache/MySQL/PHP and client-side JavaScript using the Laravel framework and jQuery.</li>
               <li>Was instructed with industry best practices in mind, specifically concerning internet secruity and user safety</li>
               <li>Developed a strong understand of Git version control and team software development</li>
             </ul>
             <a href="http://www.unf.edu/" target='_blank'  class="pull-right"><img src="/img/ulogo.jpg" class="img-circle" alt='UNF logo'></a>
             <h4>University of North Florida <small>| Jacksonville, Florda</small></h4>
-            <p> Graduated: April 2012</p>
+            <p> Graduated: April 2012 <small>&mdash;B.A. in Public Adminisration</p>
             <ul>
               <li>Recipient of Deans List recognition 2009-2012</li>
               <li>Published Co-Author of Op-ed in Florida Times Union on conflict in Sudan</li>
