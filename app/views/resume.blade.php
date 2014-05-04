@@ -14,7 +14,7 @@
   
     <div class="row">
       <div class='col-sm-10 col-sm-offset-1'>
-        <button class="btn btn-default" title="GitHub"> <a href="https://github.com/CoreycKepple" target="_blank"><img src='/img/gh4.png' alt='GitHub'></a></button> <small class="text-muted">|</small> <button class="btn btn-default" data-toggle="modal" data-tartitle="LinkedIn"> <a href="http://www.linkedin.com/in/cckepple" target="_blank"><img src='/img/link.png' alt='LinkedIn'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="Facebook"> <a href="http://www.facebook.com/corey.kepple" target="_blank"><img src='/img/fb2.png' alt='Facebook'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="E-mail Me"> <a href="mailto:CoreycKepple@gmail.com" target="_blank"><img src='/img/mail.png' alt='E-mail'></a></button> 
+        <button class="btn btn-default" title="GitHub"> <a href="https://github.com/CoreycKepple" target="_blank"><img src='/img/gh4.png' alt='GitHub'></a></button> <small class="text-muted">|</small> <button class="btn btn-default" title="LinkedIn"> <a href="http://www.linkedin.com/in/cckepple" target="_blank"><img src='/img/link.png' alt='LinkedIn'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="Facebook"> <a href="http://www.facebook.com/corey.kepple" target="_blank"><img src='/img/fb2.png' alt='Facebook'></a></button> <small class="text-muted">|</small>  <button class="btn btn-default" title="E-mail Me"> <a href="mailto:CoreycKepple@gmail.com" target="_blank"><img src='/img/mail.png' alt='E-mail'></a></button> 
       </div>
     </div>
 <!--Connect-->
