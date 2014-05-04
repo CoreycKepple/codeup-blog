@@ -110,8 +110,8 @@
     <div class="row">    
       <div class="col-sm-4 text-center">
         <h4>Vind iT</h4>
-        <a href="http://www.vindit.us"><img src="/img/logovind.png" class="thumbnail center-block" alt='Project 1'></a>
-        <p>This project was developed in a group of three over the course of 16 days.  We developed this project the using Laravel framework. We built a much more complex database using MySQL, and also have a Firebase comment system, and (Google Databse) to help display our map markers.  Two main outside techonologies we incorporated were the Google Maps API and the PhoneGap code comilier we used to quickly develop a mobile app to compliment our broswer based program.</p>
+        <a href="http://www.vindit.us"><img src="/img/vindfinal.png" class="thumbnail center-block" alt='Project 1'></a>
+        <p>This project was developed in a group of three over the course of 10 working days.  As project manager I was placed in position of leadership to help delegate responsiblities and hit deadlines.  Some of the aspects of the project I incorporated were the Google Maps API, much of the database architecture of the posts and messaging system, as well as the front end design of 1/3 of the site.</p>
       </div>
       <div class="col-sm-4 text-center">
         <h4>Personal Blog</h4>
@@ -121,7 +121,7 @@
       <div class="col-sm-4 text-center">
         <h4>Whack-A-Yankee</h4>
         <a href="{{{ action('HomeController@showWhack')}}}"><img src="/img/blogo.png" class="thumbnail center-block" alt='Project 3'></a>
-        <p>I developed this game both as a way to learn Javascript and JQuery, but also to show my passion for Boston sports (and dislike of the Yankees).  The game was built completely using HTML, CSS, Javascript, and JQuery.</p>
+        <p>I developed this game both as a way to learn Javascript and JQuery, but also to show my passion for Boston sports (and dislike of the Yankees).  The game was built entirely using HTML, CSS, Javascript, and JQuery.</p>
       </div>
     </div>
                       
